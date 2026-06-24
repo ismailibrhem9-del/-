@@ -1,0 +1,321 @@
+   :root {
+       --primary-color: #1b4332;
+       --primary-light: #2d6a4f;
+       --accent-color: #d4af37;
+       --text-dark: #212529;
+       --text-light: #f8f9fa;
+       --bg-color: #f4f7f6;
+       --card-bg: #ffffff;
+   }
+
+   * {
+       box-sizing: border-box;
+       margin: 0;
+       padding: 0;
+       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   }
+
+   body {
+       background-color: var(--bg-color);
+       color: var(--text-dark);
+       line-height: 1.8;
+   }
+
+   /* الهيدر والقائمة العلوي */
+   header {
+       background-color: var(--primary-color);
+       color: var(--text-light);
+       padding: 20px 0;
+       position: sticky;
+       top: 0;
+       z-index: 1000;
+       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   }
+
+   .header-container {
+       max-width: 1200px;
+       margin: 0 auto;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       padding: 0 20px;
+   }
+
+   .logo {
+       font-size: 24px;
+       font-weight: bold;
+       color: var(--accent-color);
+       display: flex;
+       align-items: center;
+       gap: 10px;
+   }
+
+   nav ul {
+       display: flex;
+       list-style: none;
+       gap: 20px;
+   }
+
+   nav ul li a {
+       color: var(--text-light);
+       text-decoration: none;
+       font-weight: 500;
+       padding: 8px 16px;
+       border-radius: 5px;
+       transition: all 0.3s ease;
+   }
+
+   nav ul li a:hover,
+   nav ul li a.active {
+       background-color: var(--accent-color);
+       color: var(--primary-color);
+   }
+
+   /* القسم الرئيسي والترحيب */
+   .hero {
+       background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+       color: var(--text-light);
+       text-align: center;
+       padding: 60px 20px;
+       margin-bottom: 40px;
+   }
+
+   .hero h1 {
+       font-size: 36px;
+       margin-bottom: 15px;
+       color: var(--accent-color);
+   }
+
+   .hero p {
+       font-size: 18px;
+       max-width: 600px;
+       margin: 0 auto;
+       opacity: 0.9;
+   }
+
+   /* الحاوية العامة للمحتوى */
+   .container {
+       max-width: 1200px;
+       margin: 0 auto;
+       padding: 0 20px 60px 20px;
+   }
+
+   .main-section {
+       display: none;
+   }
+
+   .main-section.active {
+       display: block;
+       animation: fadeIn 0.5s ease;
+   }
+
+   @keyframes fadeIn {
+       from {
+           opacity: 0;
+           transform: translateY(10px);
+       }
+
+       to {
+           opacity: 1;
+           transform: translateY(0);
+       }
+   }
+
+   /* ستايل الكروت والأقسام */
+   .section-title {
+       color: var(--primary-color);
+       margin-bottom: 25px;
+       border-bottom: 3px solid var(--accent-color);
+       padding-bottom: 10px;
+       display: inline-block;
+   }
+
+   /* قسم القرآن الكريم */
+   .quran-container {
+       display: grid;
+       grid-template-columns: 1fr 2fr;
+       gap: 25px;
+   }
+
+   @media (max-width: 768px) {
+       .quran-container {
+           grid-template-columns: 1fr;
+       }
+
+       .header-container {
+           flex-direction: column;
+           gap: 15px;
+       }
+   }
+
+   .surah-list {
+       background-color: var(--card-bg);
+       border-radius: 10px;
+       padding: 15px;
+       max-height: 600px;
+       overflow-y: auto;
+       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+   }
+
+   .surah-item {
+       padding: 12px 15px;
+       border-bottom: 1px solid #eee;
+       cursor: pointer;
+       border-radius: 5px;
+       transition: background 0.2s;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+   }
+
+   .surah-item:hover,
+   .surah-item.active {
+       background-color: #e8f5e9;
+       color: var(--primary-color);
+       font-weight: bold;
+   }
+
+   .surah-number {
+       background-color: var(--accent-color);
+       color: var(--primary-color);
+       width: 28px;
+       height: 28px;
+       border-radius: 5px;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       font-size: 14px;
+       font-weight: bold;
+   }
+
+   .quran-display {
+       background-color: var(--card-bg);
+       border-radius: 10px;
+       padding: 30px;
+       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+       text-align: center;
+       min-height: 400px;
+   }
+
+   .basmalah {
+       font-size: 24px;
+       color: var(--primary-color);
+       margin-bottom: 30px;
+       font-family: 'Traditional Arabic', serif;
+   }
+
+   .quran-text {
+       font-size: 22px;
+       line-height: 2.2;
+       text-align: justify;
+       text-align-last: center;
+       color: #333;
+   }
+
+   .aya-number {
+       color: var(--primary-light);
+       font-weight: bold;
+       margin: 0 5px;
+   }
+
+   /* قسم الأحاديث النبوية */
+   .hadith-card {
+       background-color: var(--card-bg);
+       border-radius: 10px;
+       padding: 25px;
+       margin-bottom: 20px;
+       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+       border-right: 5px solid var(--accent-color);
+   }
+
+   .hadith-title {
+       color: var(--primary-color);
+       font-size: 18px;
+       margin-bottom: 10px;
+       font-weight: bold;
+   }
+
+   .hadith-text {
+       font-size: 18px;
+       color: #444;
+       font-style: italic;
+   }
+
+   .hadith-rawi {
+       margin-top: 10px;
+       font-size: 14px;
+       color: #777;
+       text-align: left;
+   }
+
+   /* قسم السبحة الإلكترونية */
+   .tasbih-wrapper {
+       max-width: 400px;
+       margin: 0 auto;
+       text-align: center;
+       background-color: var(--card-bg);
+       padding: 40px 20px;
+       border-radius: 20px;
+       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+   }
+
+   .counter-display {
+       font-size: 64px;
+       font-weight: bold;
+       color: var(--primary-color);
+       margin: 20px 0;
+       background: #f0f4f2;
+       border-radius: 10px;
+       padding: 10px;
+       font-family: monospace;
+   }
+
+   .zekr-select {
+       width: 100%;
+       padding: 12px;
+       font-size: 18px;
+       border: 2px solid var(--primary-light);
+       border-radius: 8px;
+       margin-bottom: 20px;
+       color: var(--primary-color);
+       background-color: white;
+   }
+
+   .tasbih-btn {
+       width: 150px;
+       height: 150px;
+       border-radius: 50%;
+       background-color: var(--primary-color);
+       color: white;
+       font-size: 24px;
+       border: none;
+       cursor: pointer;
+       box-shadow: 0 8px 15px rgba(27, 67, 50, 0.3);
+       transition: all 0.2s;
+       margin-bottom: 20px;
+   }
+
+   .tasbih-btn:active {
+       transform: scale(0.95);
+       background-color: var(--primary-light);
+   }
+
+   .reset-btn {
+       background-color: #e63946;
+       color: white;
+       border: none;
+       padding: 8px 20px;
+       border-radius: 5px;
+       cursor: pointer;
+       font-size: 16px;
+   }
+
+   /* الفوتر */
+   footer {
+       background-color: var(--primary-color);
+       color: var(--text-light);
+       text-align: center;
+       padding: 20px 0;
+       margin-top: auto;
+       border-top: 4px solid var(--accent-color);
+   }
