@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- الكلمات المفتاحية والوصف لمحركات البحث (SEO) -->
+<meta name="description" content="موقع حياة مسلم - بوابتك الرقمية اليومية لقراءة القرآن الكريم وتدبر آياته، وقراءة الأحاديث النبوية الشريفة، مع سبحة إلكترونية تفاعلية للأذكار والاستغفار.">
+<meta name="keywords" content="حياة مسلم, القرآن الكريم, أحاديث نبوية, سبحة إلكترونية, أذكار المسلم, موقع إسلامي, استغفار, تلاوة القرآن, أحاديث صحيحة">
+<meta name="author" content="حياة مسلم">
+<link rel="stylesheet" href="style.css">
+<!-- لوجو أعلى المتصفح (Favicon) -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕌</text></svg>">
+    <title>موقع حياة مسلم - القرآن الكريم والأحاديث والسبحة</title>
+    <style>
+     
+    </style>
+
+</head>
+
+<body>
+
+    <!-- الهيدر والقائمة -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <span>🕌</span> حياة مسلم
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="nav-link active" onclick="switchSection('quran', this)">القرآن الكريم</a>
+                    </li>
+                    <li><a href="#" class="nav-link" onclick="switchSection('hadith', this)">الأحاديث الشريفة</a></li>
+                    <li><a href="#" class="nav-link" onclick="switchSection('tasbih', this)">السبحة الإلكترونية</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- البانر الترحيبي -->
+    <div class="hero">
+        <h1>موقع حياة مسلم</h1>
+        <p>بوابتك الرقمية اليومية لقراءة القرآن الكريم، وتدبر سنة نبينا محمد ﷺ، والذكر والاستغفار.</p>
+    </div>
+
+    <!-- المحتوى العام -->
+    <div class="container">
+
+        <!-- قسم القرآن الكريم -->
+        <section id="quran" class="main-section active">
+            <h2 class="section-title">القرآن الكريم</h2>
+            <div class="quran-container">
+                <div class="surah-list" id="surahListContainer">
+                    <!-- سيتم تعبئة السور هنا بواسطة الجافاسكريبت -->
+                </div>
+                <div class="quran-display">
+                    <h3 id="currentSurahTitle" style="color: var(--primary-color); margin-bottom: 15px;">سورة الفاتحة
+                    </h3>
+                    <div class="basmalah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+                    <div class="quran-text" id="quranTextContainer">
+                        <!-- سيتم تعبئة نص السورة هنا -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم الأحاديث الشريفة -->
+        <section id="hadith" class="main-section">
+            <h2 class="section-title">أحاديث نبوية مختارة</h2>
+            <div id="hadithContainer">
+                <!-- سيتم تعبئة الأحاديث هنا -->
+            </div>
+        </section>
+
+        <!-- قسم السبحة الإلكترونية -->
+        <section id="tasbih" class="main-section">
+            <h2 class="section-title">السبحة الإلكترونية</h2>
+            <div class="tasbih-wrapper">
+                <select class="zekr-select" id="zekrSelector" onchange="resetCounter()">
+                    <option value="سبحان الله">سبحان الله</option>
+                    <option value="الحمد لله">الحمد لله</option>
+                    <option value="لا إله إلا الله">لا إله إلا الله</option>
+                    <option value="الله أكبر">الله أكبر</option>
+                    <option value="أستغفر الله العظيم وأتوب إليه">أستغفر الله العظيم</option>
+                    <option value="اللهم صلِّ وسلم على نبينا محمد">اللهم صلِّ على محمد</option>
+                    <option value="لاحول ولا قوة إلا بالله">لاحول ولا قوة إلا بالله</option>
+                </select>
+                <div class="counter-display" id="counterValue">0</div>
+                <button class="tasbih-btn" onclick="incrementCounter()">اضغط للتسبيح</button>
+                <br>
+                <button class="reset-btn" onclick="resetCounter()">إعادة ضبط</button>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- الفوتر -->
+    <footer>
+        <p>جميع الحقوق محفوظة © موقع حياة مسلم 2026</p>
+    </footer>
+
+    <!-- الجافا سكريبت لإدارة المحتوى والتفاعل -->
+    <script src="javascript.js"></script>
+    
+        
+    
+</body>
+
+</html>
